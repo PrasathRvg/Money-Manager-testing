@@ -5,6 +5,9 @@ app.use(cors());
 app.use(expr.urlencoded({extended:true}))
 app.use(expr.json())
 
+var temp=require('./admin')
+app.use('/admin',temp)
+
 //
 
 app.use(expr.static('moneymanager-app/build'));
