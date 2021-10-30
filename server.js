@@ -16,7 +16,7 @@ app.get('/testing', (req, res) => {
 })
 
 
-app.use(expr.static(path.join('__dirname,build')));
+app.use(expr.static(path.join(__dirname,'build')));
 
 const path = require('path');
 
