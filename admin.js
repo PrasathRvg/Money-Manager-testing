@@ -35,4 +35,9 @@ router.get("/getdashboard",function(req,res){
 
 })
 
+router.get("/test",function(req,res){
+
+    res.status(200).send("hi")
+})
+
 module.exports=router
