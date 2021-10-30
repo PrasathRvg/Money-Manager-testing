@@ -9,13 +9,19 @@ var temp=require('./admin')
 app.use('/admin',temp)
 
 //
+app.get('/testing', (req, res) => {
+  res.json({
+    message: 'Its working fine'
+  })
+})
 
-app.use(expr.static('moneymanager-app/build'));
+
+app.use(expr.static(path.join('__dirname,build')));
 
 const path = require('path');
 
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'moneymanager-app', 'build', 'index.html'));
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname,'build', 'index.html'));
     });
 
 const PORT = process.env.PORT || 7081;
