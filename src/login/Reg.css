@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.reg-main{
+    width: 100%;
+    min-height: 100vh;
+    background: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-form{
+    background: white;
+    width: 900px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+}
+.reg-pic{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 8px;
+    height:100%;
+    width: 230%;
+}
+.reg-form .reg-form-detail{
+    padding: 10px 100px;
+    margin-left: 180px;
+    position: relative;
+    width: 100%;
+}
+.reg-form .reg-form-detail .regh2{
+    text-align: left;
+    font-size: 30px;
+    padding: 6px 0 0;
+    position: relative;
+    margin-bottom: 30px;
+}
+.reg-form .reg-form-detail .reg-input-box{
+    width: 100%;
+}
+.reg-form .reg-form-detail .reg-btn-box{
+    text-align: center;
+}
+.reg-form .reg-form-detail .reg-input-txt{
+    margin-bottom: 20px;
+}
+.reg-form .reg-form-detail input{
+    width: 92%;
+    padding: 0 15px 10px 15px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #e5e5e5;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+.reg-form .reg-form-detail input:focus{
+    border-bottom: 2px solid rgba(0, 89, 255, 0.671);
+}
+.reg-form .reg-form-detail .reg{
+    background: #004680;
+    border-radius: 6px;
+    width: 160px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+    margin: 10px 0 20px 0;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+.reg-form .reg-form-detail .reg:hover{
+    cursor: pointer;
+    background: rgb(15, 138, 15);
+}
+.reg-form .reg-form-detail .regtext{
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.reg-login{
+    cursor: pointer;
+}
+.reg-login:hover{
+    text-decoration: underline;
+}
+.reg-error-msg{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+@media (max-width: 885px)
+{
+    .reg-form{
+        margin: 100px 20px;
+        flex-direction: column;
+    }
+    .reg-form .reg-image .reg-pic{
+        display: none;
+    }
+    .reg-form .reg-form-detail{
+        width: auto;
+        padding: 10px 10px 30px 20px;
+        margin-left: 20px;
+    }
+    .reg-form .reg-form-detail .reg{
+        margin-bottom: 50px;
+    }
+}

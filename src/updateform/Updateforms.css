@@ -1,0 +1,921 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background: #11101d;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+.sidebar.close{
+  width: 78px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 50px;
+  color: #fff;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+.sidebar .logo-details .logo_name{
+  font-size:28px;
+  line-height:28px;
+  padding-top:10px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+.sidebar.close .logo-details .logo_name{
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links{
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow: auto;
+}
+.sidebar.close .nav-links{
+  overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar{
+  display: none;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover{
+  background: #1d1b31;
+}
+.sidebar .nav-links li .iocn-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link{
+  display: block
+}
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow{
+  display: none;
+}
+.sidebar .nav-links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-links li a .link_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #1d1b31;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar .profile-details{
+  position: fixed;
+  bottom: 0;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1d1b31;
+  padding: 12px 0;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details{
+  background: none;
+}
+.sidebar.close .profile-details{
+  width: 78px;
+}
+.sidebar .profile-details .profile-content{
+  display: flex;
+  align-items: center;
+}
+.sidebar .profile-details img{
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details img{
+  padding: 10px;
+}
+.sidebar .profile-details .profile_name,
+.sidebar .profile-details .job{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name,
+.sidebar.close .profile-details .job{
+  display: none;
+}
+.sidebar .profile-details .job{
+  font-size: 12px;
+}
+.home-section{
+  position: relative;
+  background: #ffffff;
+  height: 100vh;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+}
+
+.home-section .home-content i{
+  position:fixed;
+}
+
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.home-section .home-content{
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+  color: #11101d;
+  font-size: 35px;
+}
+.home-section .home-content .bx-menu{
+  margin: 0 15px;
+  cursor: pointer;
+}
+.home-section .home-content .text{
+  position: relative;
+  left:50px;
+  font-size: 35px;
+  font-weight: 600;
+  
+}
+@media (max-width: 480px) {
+  .sidebar.close .nav-links li .sub-menu{
+    display: none;
+  }
+}
+
+@media only screen and (max-width:480px){
+  .home-section .home-content .text{
+    font-size: 20px;
+  }
+  
+}
+#Exp_card1{
+    /*box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.2);*/
+    width: 60rem; 
+    height: 12rem;
+    margin: 2rem 1rem;
+    margin-left: 12rem;
+    padding-bottom: 2rem;
+    background-color:#f2f5f8;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: #004680;
+    flex-direction: column;
+}
+#Exp_card1:hover{
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.2);
+
+}
+.Exp_container{
+  width: 70rem;
+}
+.Exp_main{
+  margin: 15px;
+  width: 90%;
+  height: 400px;
+  position: relative;
+  left: 15%; 
+  flex-wrap: wrap;
+
+}
+.Exp_sub{
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+  height: 150px;
+  text-align: center;
+}
+.Exp_icons{
+  border-radius: 10px;
+  background-color: #f2f5f8; 
+  width: 10rem;
+   color: #000000; 
+   padding-top: 20px;
+}
+.Exp_icons .Exp_bx{
+  font-size: 60px;
+  color: #004680;
+}
+.Exp_icons:hover{
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.2);
+
+}
+.Exp_icons span{
+  display: block;
+  font-weight: bold;
+}
+.Exp_main h2{
+  color: #004680;
+}
+.Exp_main a{
+  text-decoration: none;
+}
+.Exp_main a:active{
+  color: #004680;
+}
+.Exp_main a:visited{
+  color: #004680;
+}
+#Exp_card2{
+    
+    width: 70rem; 
+    height: 13rem;
+    margin: 3rem 1rem;
+    margin-left: 10rem;
+    margin-top: 7rem;
+    background-color:white;
+}
+#Exp_p1{
+  color: #004680;
+  margin-left: 30rem;
+  font-size: 2rem;
+  margin-top: 0rem;
+}
+#Exp_back{
+   margin-left: 55rem;
+  margin-top: 0rem;
+  border-radius: 1rem;
+  background-color: #004680;
+  width: 5rem;
+  height: 2rem;
+  color: white;
+}
+#Exp_back:hover{
+  background-color: white;
+  color: #004680;
+}
+
+/*#card3{
+    
+    width: 35rem; 
+    height: 30rem;
+    margin:50px auto;
+    background-color:#f2f5f8;
+    padding: 30px;
+    color: #004680;
+    border: 0.1rem;
+    font-size: 1.3rem;  
+    Border-radius:10px;
+   
+}
+#card3:hover{
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.2);
+}
+#heading{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+#f1 input{
+  border-radius: 5px;
+  width: 80%;
+  outline: none;
+  border: 1px solid #a7acaa;
+  font-size: 15px;
+  padding: 8px 10px;
+}
+#f1 .radio{
+    display: flex;   
+}
+
+.flelements{
+  display: flex;
+  align-items: center;
+  margin-bottom: 27px; 
+}
+#f1 label{
+  width:200px;
+  margin-right: 10px;
+ font-size: 17px;
+ font-weight: 500;
+}*/
+
+.Exp_card3{
+  max-width: 700px;
+  height: 75%;
+  background:#f2f5f8;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #004680;
+}
+.Exp_card3:hover{
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,-1px 10px 17px 9px rgba(0,0,0,0.16);
+  box-shadow: 0px 10px 13px -7px #000000, -1px 10px 17px 9px rgba(0, 0, 0, 0.16);
+}
+.Exp_card3 #Exp_heading{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #004680;
+  text-align: center;
+
+}
+
+.Exp_card3 .Exp_form .Exp_felements{
+  margin-bottom: 27px;
+  display: flex;
+  align-items: center;
+}
+
+.Exp_card3 .Exp_form .Exp_felements label{
+   width: 200px;
+   color:#004680;
+   margin-right: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.Exp_card3 .Exp_form .Exp_felements .Exp_input,
+.Exp_card3 .Exp_form .Exp_felements .Exp_textarea{
+  width: 80%;
+  outline: none;
+  border: 1px solid #a7acaa;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+
+.Exp_card3 .Exp_form .Exp_felements .Exp_textarea{
+  width: 80%;
+  height: 125px;
+}
+
+.Exp_card3 .Exp_form .Exp_felements .Exp_input:focus,
+.Exp_card3 .Exp_form .Exp_felements .Exp_textarea:focus
+{
+  border: 1px solid black;
+}
+.Exp_card3 .Exp_form .Exp_felements .Exp_btn{
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 120px;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 0px;
+    background: #004680;
+    color: white;
+    border-radius: 20px;
+    outline: none;
+    justify-content: center
+}
+.Exp_card3 .Exp_form .Exp_felements .Exp_btn:hover{
+  background-color: white;
+  color: #004680;
+  border: 1px solid #004680;
+}
+
+.Exp_d2{
+  border-radius: 5px;
+}
+
+#Exp_expense{
+    width: 62.5rem;
+    
+}
+ .Exp_e2{
+     display: flex;
+     justify-content:space-around;   
+     padding-right: 110px;
+ }
+#Exp_category{
+    padding-left: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+
+#Exp_cat1{
+    display: flex;
+    justify-content: space-around;
+    
+}
+#Exp_cat2{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+}
+#Exp_nbutton{
+  width: 70rem; 
+  height: 5rem;
+  margin-top: 7rem;
+  margin-left: 10rem;
+  padding-left: 1rem;
+  text-align: center;
+  
+}
+
+#Exp_b1{
+  border: 0.1rem;
+  border-style: none;
+  border-radius: 0.5rem;
+  width: 10rem;
+  height: 2rem;
+  font-size: 1rem;
+  background-color: ivory;
+
+}
+#Exp_b1:hover{
+  background-color: skyblue;
+}
+.Exp_button1{
+    border: 0.1rem;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 1rem;
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem;
+    background-color:#004680;
+    color: white;
+  
+}
+.Exp_button1:hover{
+    background-color:white;
+    color: #004680;
+}
+
+
+.Exp_button {
+  position:relative;
+  margin-top: 0%;
+  margin-left: 72%;
+  display: flex;
+  height: 50px;
+  padding: 0;
+  background: #004680;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.Exp_button:hover {
+  border-radius:20px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 10px 17px 9px rgba(0,0,0,0.16); 
+box-shadow: 0px 10px 13px -7px #000000, -1px 10px 17px 9px rgba(0,0,0,0.16);
+
+}
+
+.Exp_button:active {
+  background: #f2f5f8;
+}
+
+.Exp_button__text,
+.Exp_button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+}
+.Exp_button__icon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}
+.Exp_button_icon .Exp_bx{
+  font-size: 5px;
+}
+
+  @media(max-width:768px){
+    #Exp_card1{
+      width: 100%;
+      height: 200px;
+      margin-left: 10%;
+      margin-right: 5%;
+      padding-top: 0%;
+    border-radius: 1rem;
+    }
+#Exp_card1 h2{
+  padding: 2%;
+}
+    .Exp_button{
+      margin-left: 30%;
+    }
+    .Exp_e2{
+      padding: 0%;
+      
+      justify-content: flex-start;
+    }
+    
+    .Exp_sub{
+      display: inline-block;
+      margin: 40px;
+      height: 150px;
+      text-align: center;      
+    }
+    .Exp_main{ 
+      padding: 0%;
+      left: 1%;
+      position: relative;
+      height: 300px;
+      width: 200%;
+      margin: 15px 
+    }  
+    
+.Exp_e2 h2{
+  
+   font-size: 100%;
+   padding:2%;
+}
+.Exp_e2 p{
+  font-size: 100%;
+  padding: 0%;
+  padding-left: 2%;
+}
+.Exp_card3{
+  margin:0%;
+  margin-left: 1%;
+  width: 90%;
+  height: 65%;
+  font-size: 100%;
+  padding: 0%;
+}
+.Exp_form .Exp_felemets label{
+  margin-left: 0px;
+}
+.Exp_d2{
+  width: 55%;
+  padding: 0%;
+}
+
+#Exp_back{
+  margin-left: 70%;
+}
+#Exp_p1{
+  margin-left: 20%;
+  font-size: 100%;
+}
+  }
+  @media(max-width:480px){
+    #Exp_card1{
+      width: 135%;
+      margin-left: 10%;
+      margin-right: 5%;
+      padding-top: 0%;
+    border-radius: 1rem;
+    }
+
+    .Exp_button{
+      margin-left: 40%;
+    }
+
+    .Exp_e2 {
+      padding-bottom: 0%;
+      padding-right: 0%;
+      padding-left: 0%;
+      justify-content: flex-start;
+    }
+    
+    .Exp_sub{
+      display: inline-block;
+      margin: 40px;
+      height: 150px;
+      text-align: center;
+         
+    }
+    .Exp_main{ 
+
+      padding: 0%;
+      left: 1%;
+      position: relative;
+      height: 300px;
+      width: 180%;
+      margin: 15px 
+    }  
+    .Exp_main h2{
+      margin-bottom: 0%;
+    }
+    .Exp_bx{
+      font-size: 40px;
+    }
+    .Exp_icons{
+      width: 100px;
+      height: 80px;
+      margin-top: 25px;
+      ;
+    }
+    .Exp_icons span{
+      font-size: 10px;
+    }
+    
+.Exp_e2 h2{
+  padding: 2%;
+   font-size: 100%;
+}
+.Exp_e2 p{
+  font-size: 100%;
+  padding: 0%;
+  padding-left: 1%;
+}
+.Exp_card3{
+  margin:0%;
+  margin-left: 10%;
+  width: 140%;
+  height: 70%;
+  font-size: 100%;
+  padding: 0%;
+  text-align: center;
+}
+.Exp_form .Exp_felemets label{
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.Exp_card3 .Exp_felements .Exp_input{
+  display: block;
+}
+.Exp_d2{
+  width: 55%;
+  padding: 0%;
+}
+
+#Exp_back{
+  margin-left: 100%;
+}
+#Exp_p1{
+  margin-left: 20%;
+  font-size: 100%;
+}
+#Exp_f1{
+  font-size: 100%;
+}
+
+  }
+  @media(max-width:400px){
+    #Exp_card1{
+      width: 175%;
+      margin-left: 10%;
+      margin-right: 5%;
+      padding-top: 0%;
+    border-radius: 1rem;
+    }
+
+    .Exp_button{
+      margin-left: 40%;
+    }
+
+    .Exp_e2 {
+      padding-bottom: 0%;
+      padding-right: 0%;
+      padding-left: 0%;
+      justify-content: flex-start;
+    }
+    
+    .Exp_sub{
+      display: inline-block;
+      margin: 40px;
+      height: 150px;
+      text-align: center;
+         
+    }
+    .Exp_main{ 
+
+      padding: 0%;
+      left: 1%;
+      position: relative;
+      height: 300px;
+      width: 180%;
+      margin: 15px 
+    }  
+    .Exp_main h2{
+      margin-bottom: 0%;
+    }
+    .Exp_bx{
+      font-size: 40px;
+    }
+    .Exp_icons{
+      width: 100px;
+      height: 80px;
+      margin-top: 25px;
+      ;
+    }
+    .Exp_icons span{
+      font-size: 10px;
+    }
+    
+.Exp_e2 h2{
+  padding: 1%;
+   font-size: 100%;
+}
+.Exp_e2 p{
+  font-size: 100%;
+  padding: 0%;
+  padding-left: 1%;
+}
+.Exp_card3{
+  margin:0%;
+  margin-left: 2%;
+  width: 140%;
+  height: 70%;
+  font-size: 100%;
+  padding: 0%;
+  text-align: center;
+}
+.Exp_form .Exp_felemets label{
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.Exp_card3 .Exp_felements .Exp_input{
+  display: block;
+}
+.Exp_card3 .Exp_form .Exp_felements .Exp_btn{
+
+  justify-content: flex-start;
+  
+}
+.Exp_d2{
+  width: 55%;
+  padding: 0%;
+}
+
+#Exp_back{
+  margin-left: 100%;
+}
+#Exp_p1{
+  margin-left: 20%;
+  font-size: 100%;
+}
+#Exp_f1{
+  font-size: 100%;
+}
+
+  }
+  
+    
+  
+  
+ /* @media(max-width:600px){
+    
+    #Exp_card1{
+      width: 90%;
+      margin-left: 10%;
+      margin-right: 5%;
+      padding-top: 0%;
+    border-radius: 1rem;
+    }
+    .sub{
+      padding-bottom: 25%;
+      padding-top: 30%;
+      margin: 0%;
+      padding-left: 0%;  
+      display: block;    
+    }
+    .main{ 
+      padding: 0%;
+      left: 0%;
+      margin: 0%; 
+    }    
+    
+.e2 h2{
+  padding: 2%;
+   font-size: 100%;
+}
+.e2 p{
+  font-size: 100%;
+  padding: 0%;
+}
+    .button{
+      margin-left: 15%;
+    }
+    .e2{
+      padding-bottom: 0%;
+      justify-content: flex-start;
+    }
+    #card3{
+      margin:0%;
+      margin-left: 10%;
+      width: 90%;
+      font-size: 100%;
+      padding: 0%;
+    }
+    .d2{
+      width: 55%;
+      padding: 0%;
+    }
+    
+    #back{
+      margin-left: 20%;
+    }
+    #p1{
+      margin-left: 20%;
+      font-size: 100%;
+    }
+  }*/
