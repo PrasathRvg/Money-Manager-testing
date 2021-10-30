@@ -44,7 +44,7 @@ function Year() {
       displayincomey()
     },[])
     const displayincomey=()=>{
-      return axios.get("http://localhost:7081/getincome").then((res)=>{
+      return axios.get("/getincome").then((res)=>{
             console.log(res.data)
             setIncome(res.data)
     })
@@ -65,19 +65,19 @@ function Year() {
       
     
       const displayy =() =>{
-          return axios.get("http://localhost:7081/getbudget").then((res)=>{
+          return axios.get("/getbudget").then((res)=>{
             console.log(res.data)
             setFormy(res.data)
           })
       }
       const userdisplay =()=>{
-        return axios.get('http://localhost:7081/getaccount').then((res)=>{
+        return axios.get('/getaccount').then((res)=>{
            console.log(res.data)
            setuser(res.data)
         })
       }
       const deleteBudget =(id)=>{
-        axios.delete(`http://localhost:7081/remove/${id}`).then((res)=>{
+        axios.delete(`/remove/${id}`).then((res)=>{
              displayy();
              
       })

@@ -49,7 +49,7 @@ function Month() {
       displayincome()
     },[])
     const displayincome=()=>{
-      return axios.get("http://localhost:7081/getincome").then((res)=>{
+      return axios.get("/getincome").then((res)=>{
             console.log(res.data)
             setIncome(res.data)
     })
@@ -69,13 +69,13 @@ function Month() {
         }
       }
       const display =() =>{
-          return axios.get("http://localhost:7081/getbudget").then((res)=>{
+          return axios.get("/getbudget").then((res)=>{
             console.log(res.data)
             setForm(res.data)
           })
       }
       const deleteBudget =(id)=>{
-        axios.delete(`http://localhost:7081/remove/${id}`).then((res)=>{
+        axios.delete(`/remove/${id}`).then((res)=>{
              display();
              
       })
@@ -83,7 +83,7 @@ function Month() {
       console.log(form);
 
       const userdisplay =()=>{
-        return axios.get('http://localhost:7081/getaccount').then((res)=>{
+        return axios.get('/getaccount').then((res)=>{
            console.log(res.data)
            setuser(res.data)
         })

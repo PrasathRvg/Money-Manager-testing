@@ -33,7 +33,7 @@ function Chart()
   
   
   const dashboarddisplay =()=>{
-    return axios.get('http://localhost:7081/getdashboard').then((res)=>{
+    return axios.get('/getdashboard').then((res)=>{
        console.log(res.data)
        setdashboard(res.data)
     })

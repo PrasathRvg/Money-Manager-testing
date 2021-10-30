@@ -16,7 +16,7 @@ export default function Login(props) {
     const [mailError, setEmailError] = useState('')
     const [errorpassword, setErrorPassword] = useState("");
     
-    const loginuser = ()=>{axios.post("http://localhost:7081/loginuser",{mail:mail,password:password})
+    const loginuser = ()=>{axios.post("/loginuser",{mail:mail,password:password})
     .then((response)=>{
       if(response.data.message == "login success")
       {

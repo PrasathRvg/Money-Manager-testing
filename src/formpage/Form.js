@@ -40,7 +40,7 @@ import axios from 'axios'
     history.push({pathname:'/year'})
   }}
 
-  const FormValidation =()=>{ axios.post("http://localhost:7081/budget",
+  const FormValidation =()=>{ axios.post("/budget",
    {budgetname:budgetname,category:category,amount:amount,budgetplan:budgetplan,startdate:startdate,enddate:enddate,userid:userid} 
   ).then((res)=>{console.log(res.data)
     page()})}

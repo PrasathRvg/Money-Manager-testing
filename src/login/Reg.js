@@ -22,7 +22,7 @@ export default function Reg(props) {
     const [errorpassword, setErrorPassword] = useState("");
     const [errorconfirmpassword, setErrorConfirmPassword] = useState("");
 
-    const register_user = ()=>{axios.post("http://localhost:7081/registeruser",{name:name,mail:mail,password:password,confirmpassword:confirmpassword})
+    const register_user = ()=>{axios.post("/registeruser",{name:name,mail:mail,password:password,confirmpassword:confirmpassword})
     .then((res)=>{
       if(res.data.message)
       {

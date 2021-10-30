@@ -38,7 +38,7 @@ const history=useHistory()
     }}
     
     const updateTask =()=>{
-        axios.put('http://localhost:7081/update_budget',{
+        axios.put('/update_budget',{
             _id:state._id,
             budgetname:updateBname,
             category: updateCategory,

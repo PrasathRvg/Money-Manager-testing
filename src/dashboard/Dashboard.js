@@ -126,26 +126,26 @@ var state = {
   }, [])
 
   const display =()=>{
-    return axios.get('http://localhost:7081/getincome').then((res)=>{
+    return axios.get('/getincome').then((res)=>{
        console.log(res.data)
        settransaction(res.data)
     })
   }
   const dashboarddisplay =()=>{
-    return axios.get('http://localhost:7081/getdashboard').then((res)=>{
+    return axios.get('/getdashboard').then((res)=>{
        console.log(res.data)
        setdashboard(res.data)
     })
   }
   const budgetdisplay =()=>{
-    return axios.get('http://localhost:7081/getbudget').then((res)=>{
+    return axios.get('/getbudget').then((res)=>{
        console.log(res.data)
        setbudget(res.data)
     })
   }
   
   const userdisplay =()=>{
-    return axios.get('http://localhost:7081/getaccount').then((res)=>{
+    return axios.get('/getaccount').then((res)=>{
        console.log(res.data)
        setuser(res.data)
     })

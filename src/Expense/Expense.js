@@ -34,7 +34,7 @@ function Expense() {
   }, [])
 
   const incomedisplay =()=>{
-    return axios.get('http://localhost:7081/getincome').then((res)=>{
+    return axios.get('/getincome').then((res)=>{
        console.log(res.data)
        setIncome(res.data)
     })

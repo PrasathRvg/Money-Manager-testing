@@ -98,14 +98,14 @@ useEffect(() => {
  }, [])
 
  const dashboarddisplay =()=>{
-  return axios.get('http://localhost:7081/getdashboard').then((res)=>{
+  return axios.get('/getdashboard').then((res)=>{
      console.log(res.data)
      setdashboard(res.data)
   })
 }
 
  const userdisplay =()=>{
-  return axios.get('http://localhost:7081/getaccount').then((res)=>{
+  return axios.get('/getaccount').then((res)=>{
      console.log(res.data)
      setuser(res.data)
   })

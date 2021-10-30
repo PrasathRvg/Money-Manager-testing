@@ -53,7 +53,7 @@ function Account() {
   }, [])
 
   const accountdisplay =()=>{
-    return axios.get('http://localhost:7081/getaccount').then((res)=>{
+    return axios.get('/getaccount').then((res)=>{
        setAccount(res.data)
     })
   }

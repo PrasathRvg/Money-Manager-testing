@@ -21,7 +21,7 @@ function Updateforms(props) {
     const[updatedate,setdate]=useState(state.date)
     const[utype,setType]=useState(state.type)
     const updateTask =()=>{
-        axios.put('http://localhost:7081/updatetransaction',{
+        axios.put('/updatetransaction',{
             _id:state._id,
             category: updateCategory,
         amount: updateamount,

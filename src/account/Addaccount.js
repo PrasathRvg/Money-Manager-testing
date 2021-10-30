@@ -37,7 +37,7 @@ export default function Addaccount() {
     setIFSC("")
     setAmount("")
   }
-  const AccountValidation=()=>{axios.post('http://localhost:7081/acctform',
+  const AccountValidation=()=>{axios.post('/acctform',
   {Name:Name,category:category,BankName:BankName,AccountNumber:AccountNumber,IFSC:IFSC,Amount:Amount,userid:userid}
   ).then((res)=>{console.log(res.data)
   history.push('/account')})}

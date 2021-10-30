@@ -25,7 +25,7 @@ function AddIncome() {
   const logout=()=>{
     localStorage.clear()
     window.location.reload(true);}
-  const FormValidation =()=>{ axios.post("http://localhost:7081/income",
+  const FormValidation =()=>{ axios.post("/income",
   {category:category,amount:amount,accountType:accountType,date:date,userid:userid} 
  ).then((res)=>{console.log(res.data)
   history.push('/trans')})}

@@ -30,13 +30,13 @@ console.log("transaction",transaction)
   }, [])
 
   const incomedisplay =()=>{
-    return axios.get('http://localhost:7081/getincome').then((res)=>{
+    return axios.get('/getincome').then((res)=>{
        setIncome(res.data)
     })
   }
 
   const deleteTask =(id)=>{
-    axios.delete(`http://localhost:7081/deletetransaction/${id}`).then((res)=>{
+    axios.delete(`/deletetransaction/${id}`).then((res)=>{
          incomedisplay();
   })
 }
